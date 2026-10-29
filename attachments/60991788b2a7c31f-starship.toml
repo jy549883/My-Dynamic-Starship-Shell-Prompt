@@ -1,0 +1,357 @@
+# ~/.config/starship.toml
+palette = 'default'
+
+add_newline = true
+command_timeout = 500
+format = """\
+[\
+[┏━$cmd_duration](fg:powerbar) $status $fill $directory ($package )$fill $time\
+$line_break\
+[┣━](fg:powerbar)\
+[[](fg:zone1bg bg:none) ${custom.os} ${env_var.STARSHIP_OS_SYMBOL} ${env_var.STARSHIP_OS_NAME} ${env_var.STARSHIP_OS_VERSION} (\\(${env_var.STARSHIP_OS_TYPE}\\) )](fg:zone1fg bg:zone1bg)\
+[[](fg:zone1bg bg:zone2bg) $container ](fg:zone2fg bg:zone2bg)\
+[[](fg:zone2bg bg:zone3bg) $memory_usage ](fg:zone3fg bg:zone3bg)\
+[[](fg:zone3bg bg:zone4bg) $fill $git_status $git_branch $package $fill [](fg:zone5bg bg:zone4bg)](bold fg:zone4fg bg:zone4bg)\
+[ $username [](fg:zone6bg bg:zone5bg)](bg:zone5bg)\
+[ $hostname [](fg:zone7bg bg:zone6bg)](fg:zone6fg bg:zone6bg)\
+[ $localip [](fg:zone7bg bg:none)](fg:zone7fg bg:zone7bg)\
+$line_break\
+[┗━━[$jobs](fg:text)](fg:powerbar) $shell($sudo)[❯](fg:powerbar)\
+](fg:text bg:none)\
+"""
+
+
+[palettes.default]
+powerbar = '#D1B200'
+text = 'green'
+directory = '#C9CD03'
+zone1fg = '#969696'
+zone1bg = '#525252'
+zone2fg = '#000000'
+zone2bg = '#696969'
+zone3fg = '#000000'
+zone3bg = '#808080'
+zone4fg = '#969696'
+zone4bg = '#3B3B3B'
+zone5fg_root = '#FFFF8A'
+zone5fg_user = '#F2F2F2'
+zone5bg = '#808080'
+zone6fg = '#000000'
+zone6bg = '#696969'
+zone7fg = '#969696'
+zone7bg = '#525252'
+
+[palettes.root_noerror]
+powerbar = '#D1B200'
+text = 'green'
+directory = '#C9CD03'
+zone1fg = '#D3D3D3'
+zone1bg = '#A30000'
+zone2fg = '#D3D3D3'
+zone2bg = '#D10000'
+zone3fg = '#F2F2F2'
+zone3bg = '#FF0000'
+zone4fg = '#D3D3D3'
+zone4bg = '#750000'
+zone5fg_root = '#FFFF8A'
+zone5fg_user = '#F2F2F2'
+zone5bg = '#FF0000'
+zone6fg = '#D3D3D3'
+zone6bg = '#D10000'
+zone7fg = '#D3D3D3'
+zone7bg = '#A30000'
+
+[palettes.root_error]
+powerbar = '#D1B200'
+text = 'green'
+directory = '#C9CD03'
+zone1fg = '#C9211E'
+zone1bg = '#9DA003'
+zone2fg = '#C9211E'
+zone2bg = '#CACD04'
+zone3fg = '#FF0000'
+zone3bg = '#E6E905'
+zone4fg = '#D3D3D3'
+zone4bg = '#750000'
+zone5fg_root = '#FFFF8A'
+zone5fg_user = '#F2F2F2'
+zone5bg = '#FF0000'
+zone6fg = '#D3D3D3'
+zone6bg = '#D10000'
+zone7fg = '#D3D3D3'
+zone7bg = '#A30000'
+
+[palettes.user_noerror_nosudo]
+powerbar = '#D1B200'
+text = 'green'
+directory = '#C9CD03'
+zone1fg = '#FFCC00'
+zone1bg = '#466B8B'
+zone2fg = '#FFCC00'
+zone2bg = '#5584AA'
+zone3fg = '#FFCC00'
+zone3bg = '#7498B9'
+zone4fg = '#FFCC00'
+zone4bg = '#37546D'
+zone5fg_root = '#FFFF8A'
+zone5fg_user = '#F2F2F2'
+zone5bg = '#7498B9'
+zone6fg = '#FFCC00'
+zone6bg = '#5584AA'
+zone7fg = '#FFCC00'
+zone7bg = '#466B8B'
+
+[palettes.user_noerror_sudo]
+powerbar = '#D1B200'
+text = 'green'
+directory = '#C9CD03'
+zone1fg = '#FFCC00'
+zone1bg = '#466B8B'
+zone2fg = '#FFCC00'
+zone2bg = '#5584AA'
+zone3fg = '#FFCC00'
+zone3bg = '#7498B9'
+zone4fg = '#FFCC00'
+zone4bg = '#37546D'
+zone5fg_root = '#FFFF8A'
+zone5fg_user = '#F2F2F2'
+zone5bg = '#FF0000'
+zone6fg = '#FFCC00'
+zone6bg = '#D10000'
+zone7fg = '#FFCC00'
+zone7bg = '#A30000'
+
+[palettes.user_error_nosudo]
+powerbar = '#D1B200'
+text = 'green'
+directory = '#C9CD03'
+zone1fg = '#C9211E'
+zone1bg = '#9DA003'
+zone2fg = '#C9211E'
+zone2bg = '#CACD04'
+zone3fg = '#FF0000'
+zone3bg = '#E6E905'
+zone4fg = '#FFCC00'
+zone4bg = '#37546D'
+zone5fg_root = '#FFFF8A'
+zone5fg_user = '#F2F2F2'
+zone5bg = '#7498B9'
+zone6fg = '#FFCC00'
+zone6bg = '#5584AA'
+zone7fg = '#FFCC00'
+zone7bg = '#466B8B'
+
+[palettes.user_error_sudo]
+powerbar = '#D1B200'
+text = 'green'
+directory = '#C9CD03'
+zone1fg = '#C9211E'
+zone1bg = '#9DA003'
+zone2fg = '#C9211E'
+zone2bg = '#CACD04'
+zone3fg = '#FF0000'
+zone3bg = '#E6E905'
+zone4fg = '#FFCC00'
+zone4bg = '#37546D'
+zone5fg_root = '#FFFF8A'
+zone5fg_user = '#F2F2F2'
+zone5bg = '#FF0000'
+zone6fg = '#FFCC00'
+zone6bg = '#D10000'
+zone7fg = '#FFCC00'
+zone7bg = '#A30000'
+
+
+
+[line_break]
+disabled = false
+
+[fill]
+disabled = false
+symbol = ' '
+#style = 'bg:prev_bg'
+style = 'bg:prev_bg'
+#format = '[$symbol]($style)'
+
+
+
+##### Line 1 #####
+[cmd_duration]
+disabled = false
+min_time = 0
+show_milliseconds = true
+style = ''
+format = '[$duration](fg:text)'
+
+[status]
+disabled = false
+symbol = '🔴 FAIL'
+success_symbol = '🟢 SUCCESS '
+sigint_symbol = ' INTURRUPTED '
+map_symbol = true
+style = 'text'
+success_style = 'green'
+failure_style = 'red'
+format = '[$status/$hex_status $symbol$common_meaning$signal_name]($style)'
+
+[directory]
+truncation_length = 15
+read_only = ' 🔒'
+truncation_symbol = '/.../'
+style = 'bold directory'
+read_only_style = 'bold red'
+format = 'Path: [$path$read_only]($style)'
+
+[time]
+disabled = false
+use_12hr = true
+time_format = '%A %-e %B %Y, %-I:%M:%S%P'
+style = ''
+format = '$time'
+
+
+
+##### Line 2 #####
+[container]
+## zone2
+symbol = '📦'
+style = ''
+format = '$symbol $name'
+
+[memory_usage]
+## zone3
+disabled = false
+threshold = 0
+symbol = ''
+style = ''
+format = '$symbol${ram_pct}\(${swap_pct}\)'
+
+[git_branch]
+## zone4
+symbol = ''
+style = ''
+format = '$symbol$branch(:$remote_branch)'
+
+[git_status]
+## zone4
+style = ''
+format = '$all_status$ahead_behind'
+
+[package]
+disabled = false
+symbol = '🎁'
+version_format = 'v${raw}'
+display_private = true
+style = ''
+format = '$symbol $version'
+
+[username]
+## zone5
+show_always = true
+#aliases = { "jy549883" = "Jeff️", "root" = "ROOT" }
+aliases = { "root" = "ROOT" }
+style_root = 'bold underline zone5fg_root bg:prev_bg'
+style_user = 'bold fg:zone5fg_user bg:prev_bg'
+format = '[$user]($style)'
+
+[hostname]
+## zone5
+ssh_only = false
+ssh_symbol = '🌐'
+trim_at = ''
+style = ''
+format = '$ssh_symbol$hostname'
+
+[hostname.aliases]
+name = 'name'
+
+[localip]
+disabled = false
+ssh_only = false
+style = ''
+format = '$localipv4'
+
+
+
+##### Line 3 #####
+[jobs]
+number_threshold = 0
+symbol_threshold = 0
+symbol = ''
+style = ''
+format = '$symbol$number'
+
+[shell]
+disabled = false
+bash_indicator = 'BASH'
+fish_indicator = 'FISH'
+zsh_indicator = 'ZSH'
+style = ''
+format = '$indicator'
+
+[sudo]
+disabled = false
+symbol = '💥'
+style = ''
+format = '[$symbol](red)'
+
+# I am wanting to have a functional [os] module, and what is currently used in Starship is not functional.
+# So I am implementing a workaround for this by setting custom environment variables STARSHIP_OS_NAME,
+# STARSHIP_OS_VERSION, STARSHIP_OS_EDITION, STARSHIP_OS_CODENAME, STARSHIP_OS_TYPE, and STARSHIP_OS_SYMBOL
+# to the correct values.  Each distribution includes this information in the /etc/os-release file.
+# See [Starship Issue #6902](https://github.com/starship/starship/issues/6902)
+
+[env_var.STARSHIP_OS_SYMBOL]
+disabled = false
+symbol = ''
+default = 'The OS Symbol'
+#variable = 'STARSHIP_OS_SYMBOL'
+style = 'none'
+format = '$symbol$env_value'
+description	= 'A workaround for the [os] module symbol variable.'
+
+[env_var.STARSHIP_OS_NAME]
+disabled = false
+symbol = ''
+default = 'The OS Name'
+#variable = 'STARSHIP_OS_NAME'
+style = 'none'
+format = '$symbol$env_value'
+description	= 'A workaround for the [os] module name variable.'
+
+[env_var.STARSHIP_OS_VERSION]
+disabled = false
+symbol = ''
+default = 'The OS Version'
+#variable = 'STARSHIP_OS_VERSION'
+style = 'none'
+format = '$symbol$env_value'
+description	= 'A workaround for the [os] module version variable.'
+
+[env_var.STARSHIP_OS_EDITION]
+disabled = false
+symbol = ''
+default = 'The OS Edition'
+#variable = 'STARSHIP_OS_EDITION'
+style = 'none'
+format = '$symbol$env_value'
+description	= 'A workaround for the [os] module edition variable.'
+
+[env_var.STARSHIP_OS_CODENAME]
+disabled = false
+symbol = ''
+default = 'The OS Codename'
+#variable = 'STARSHIP_OS_CODENAME'
+style = 'none'
+format = '$symbol$env_value'
+description	= 'A workaround for the [os] module codename variable.'
+
+[env_var.STARSHIP_OS_TYPE]
+disabled = false
+symbol = ''
+default = 'The OS Type'
+#variable = 'STARSHIP_OS_TYPE'
+style = 'none'
+format = '$symbol$env_value'
+description	= 'A workaround for the [os] module type variable.'
+
